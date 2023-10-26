@@ -7,7 +7,7 @@ public class ContactUsRequest {
     private String email;
 
     private String phoneNumber;
-
+    //TODO ENUM
     private String contextType;
 
     private String context;

@@ -1,4 +1,4 @@
-package com.example.smmproject.service.Impl;
+package com.example.smmproject.service.impl;
 
 import com.example.smmproject.dto.Request.ContactUsRequest;
 import com.example.smmproject.dto.Response.ContactUsResponse;

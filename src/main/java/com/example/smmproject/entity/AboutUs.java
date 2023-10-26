@@ -20,4 +20,12 @@ public class AboutUs {
     public Long getId() {
         return id;
     }
+
+    public String getContext() {
+        return context;
+    }
+
+    public void setContext(String context) {
+        this.context = context;
+    }
 }

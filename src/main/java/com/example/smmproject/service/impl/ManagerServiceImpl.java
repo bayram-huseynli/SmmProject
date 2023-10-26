@@ -1,4 +1,4 @@
-package com.example.smmproject.service.Impl;
+package com.example.smmproject.service.impl;
 
 import com.example.smmproject.dto.Request.ManagerRequest;
 import com.example.smmproject.dto.Response.ManagerResponse;
