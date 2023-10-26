@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/aboutUs/v1")
+@RequestMapping("/api/aboutUs")
 public class AboutUsController {
 
     private final AboutUsService aboutUsService;
@@ -19,27 +19,27 @@ public class AboutUsController {
         this.aboutUsService = aboutUsService;
     }
 
-    @GetMapping
+    @GetMapping("getAll")
     public ResponseEntity<List<AboutUsResponse>> findAll(){
     return new ResponseEntity<>(aboutUsService.findAll(), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public void create(@RequestBody AboutUsRequest aboutUsRequest){
         aboutUsService.create(aboutUsRequest);
     }
 
-    @GetMapping("/id")
+    @GetMapping("getById/{id}")
     public AboutUsResponse getById(@PathVariable Long id){
         return aboutUsService.getById(id);
     }
 
-    @PutMapping("/id")
+    @PutMapping("update/{id}")
     public void update(@PathVariable Long id,@RequestBody AboutUsRequest aboutUsRequest){
         aboutUsService.update(id,aboutUsRequest);
     }
 
-    @DeleteMapping("/id")
+    @DeleteMapping("delete/{id}")
     public void delete(@PathVariable Long id){
         aboutUsService.delete(id);
     }
