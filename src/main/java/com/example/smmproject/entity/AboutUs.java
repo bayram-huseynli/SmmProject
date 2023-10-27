@@ -3,7 +3,7 @@ package com.example.smmproject.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "AboutUs")
+@Table(name = "aboutUs")
 public class AboutUs {
 
     @Id
