@@ -13,7 +13,7 @@ public class BlogCategory {
     @OneToMany(mappedBy = "blogCategory")
     private List<Blog> blogs;
 
-    public Long id() {
+    public Long getId() {
         return id;
     }
 
@@ -21,7 +21,7 @@ public class BlogCategory {
         this.id = id;
     }
 
-    public String blogType() {
+    public String getBlogType() {
         return blogType;
     }
 
@@ -29,7 +29,7 @@ public class BlogCategory {
         this.blogType = blogType;
     }
 
-    public List<Blog> blogs() {
+    public List<Blog> getBlogs() {
         return blogs;
     }
 

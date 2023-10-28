@@ -4,7 +4,7 @@ public class PortfolioCategoryRequest {
 
     private String portfolioType;
 
-    public String portfolioType() {
+    public String getPortfolioType() {
         return portfolioType;
     }
 

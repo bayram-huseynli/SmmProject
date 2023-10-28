@@ -4,7 +4,7 @@ public class BlogCategoryResponse {
    private Long id;
    private String blogType;
 
-    public Long id() {
+    public Long getId() {
         return id;
     }
 
@@ -12,7 +12,7 @@ public class BlogCategoryResponse {
         this.id = id;
     }
 
-    public String blogType() {
+    public String getBlogType() {
         return blogType;
     }
 

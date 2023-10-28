@@ -17,7 +17,7 @@ public class Manager {
     @OneToMany(mappedBy = "manager")
     private List<Portfolio> portfolios;
 
-    public Long id() {
+    public Long getId() {
         return id;
     }
 
@@ -25,7 +25,7 @@ public class Manager {
         this.id = id;
     }
 
-    public String managerType() {
+    public String getManagerType() {
         return managerType;
     }
 
@@ -33,7 +33,7 @@ public class Manager {
         this.managerType = managerType;
     }
 
-    public String context() {
+    public String getContext() {
         return context;
     }
 
@@ -41,7 +41,7 @@ public class Manager {
         this.context = context;
     }
 
-    public List<Portfolio> portfolios() {
+    public List<Portfolio> getPortfolios() {
         return portfolios;
     }
 

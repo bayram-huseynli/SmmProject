@@ -25,7 +25,7 @@ public class Portfolio {
     @JoinColumn(name = "manager_id")
     private Manager manager;
 
-    public Long id() {
+    public Long getId() {
         return id;
     }
 
@@ -33,7 +33,7 @@ public class Portfolio {
         this.id = id;
     }
 
-    public String name() {
+    public String getName() {
         return name;
     }
 
@@ -41,7 +41,7 @@ public class Portfolio {
         this.name = name;
     }
 
-    public String customerName() {
+    public String getCustomerName() {
         return customerName;
     }
 
@@ -49,7 +49,7 @@ public class Portfolio {
         this.customerName = customerName;
     }
 
-    public LocalDate date() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -57,7 +57,7 @@ public class Portfolio {
         this.date = date;
     }
 
-    public String description() {
+    public String getDescription() {
         return description;
     }
 
@@ -65,7 +65,7 @@ public class Portfolio {
         this.description = description;
     }
 
-    public PortfolioCategory portfolioCategory() {
+    public PortfolioCategory getPortfolioCategory() {
         return portfolioCategory;
     }
 
@@ -73,7 +73,7 @@ public class Portfolio {
         this.portfolioCategory = portfolioCategory;
     }
 
-    public Manager manager() {
+    public Manager getManager() {
         return manager;
     }
 

@@ -10,7 +10,7 @@ public class PortfolioRequest {
     private LocalDate date;
     private String description;
 
-    public Long portfolioCategoryId() {
+    public Long getPortfolioCategoryId() {
         return portfolioCategoryId;
     }
 
@@ -18,7 +18,7 @@ public class PortfolioRequest {
         this.portfolioCategoryId = portfolioCategoryId;
     }
 
-    public String name() {
+    public String getName() {
         return name;
     }
 
@@ -26,7 +26,7 @@ public class PortfolioRequest {
         this.name = name;
     }
 
-    public Long managerType() {
+    public Long getManagerType() {
         return managerType;
     }
 
@@ -34,7 +34,7 @@ public class PortfolioRequest {
         this.managerType = managerType;
     }
 
-    public String customerName() {
+    public String getCustomerName() {
         return customerName;
     }
 
@@ -42,7 +42,7 @@ public class PortfolioRequest {
         this.customerName = customerName;
     }
 
-    public LocalDate date() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -50,7 +50,7 @@ public class PortfolioRequest {
         this.date = date;
     }
 
-    public String description() {
+    public String getDescription() {
         return description;
     }
 
@@ -58,3 +58,4 @@ public class PortfolioRequest {
         this.description = description;
     }
 }
+

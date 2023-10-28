@@ -9,7 +9,7 @@ public class BlogRequest {
     private String content;
     private LocalDate date;
 
-    public Long blogCategoryId() {
+    public Long getBlogCategoryId() {
         return blogCategoryId;
     }
 
@@ -17,7 +17,7 @@ public class BlogRequest {
         this.blogCategoryId = blogCategoryId;
     }
 
-    public String title() {
+    public String getTitle() {
         return title;
     }
 
@@ -25,7 +25,7 @@ public class BlogRequest {
         this.title = title;
     }
 
-    public String content() {
+    public String getContent() {
         return content;
     }
 
@@ -33,7 +33,7 @@ public class BlogRequest {
         this.content = content;
     }
 
-    public LocalDate date() {
+    public LocalDate getDate() {
         return date;
     }
 

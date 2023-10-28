@@ -4,7 +4,7 @@ public class PortfolioCategoryResponse {
     private Long id;
     private String portfolioType;
 
-    public Long id() {
+    public Long getId() {
         return id;
     }
 
@@ -12,7 +12,7 @@ public class PortfolioCategoryResponse {
         this.id = id;
     }
 
-    public String portfolioType() {
+    public String getPortfolioType() {
         return portfolioType;
     }
 

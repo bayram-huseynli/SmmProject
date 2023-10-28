@@ -17,7 +17,7 @@ public class Blog {
     @JoinColumn(name = "blog_category_id")
     private BlogCategory blogCategory;
 
-    public Long id() {
+    public Long getId() {
         return id;
     }
 
@@ -25,7 +25,7 @@ public class Blog {
         this.id = id;
     }
 
-    public String title() {
+    public String getTitle() {
         return title;
     }
 
@@ -33,7 +33,7 @@ public class Blog {
         this.title = title;
     }
 
-    public String content() {
+    public String getContent() {
         return content;
     }
 
@@ -41,7 +41,7 @@ public class Blog {
         this.content = content;
     }
 
-    public LocalDate date() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -49,7 +49,7 @@ public class Blog {
         this.date = date;
     }
 
-    public BlogCategory blogCategory() {
+    public BlogCategory getBlogCategory() {
         return blogCategory;
     }
 

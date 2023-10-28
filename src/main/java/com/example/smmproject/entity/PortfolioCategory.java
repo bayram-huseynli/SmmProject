@@ -14,7 +14,7 @@ public class PortfolioCategory {
     private List<Portfolio> portfolios;
 
 
-    public Long id() {
+    public Long getId() {
         return id;
     }
 
@@ -22,7 +22,7 @@ public class PortfolioCategory {
         this.id = id;
     }
 
-    public String portfolioType() {
+    public String getPortfolioType() {
         return portfolioType;
     }
 
@@ -30,7 +30,7 @@ public class PortfolioCategory {
         this.portfolioType = portfolioType;
     }
 
-    public List<Portfolio> portfolios() {
+    public List<Portfolio> getPortfolios() {
         return portfolios;
     }
 

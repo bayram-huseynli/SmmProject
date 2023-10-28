@@ -13,7 +13,7 @@ public class PortfolioResponse {
     private LocalDate date;
 ;
 
-    public Long id() {
+    public Long getId() {
         return id;
     }
 
@@ -21,7 +21,7 @@ public class PortfolioResponse {
         this.id = id;
     }
 
-    public Long portfolioCategoryId() {
+    public Long getPortfolioCategoryId() {
         return portfolioCategoryId;
     }
 
@@ -29,7 +29,7 @@ public class PortfolioResponse {
         this.portfolioCategoryId = portfolioCategoryId;
     }
 
-    public String name() {
+    public String getName() {
         return name;
     }
 
@@ -37,7 +37,7 @@ public class PortfolioResponse {
         this.name = name;
     }
 
-    public Long managerTypeId() {
+    public Long getManagerTypeId() {
         return managerTypeId;
     }
 
@@ -45,7 +45,7 @@ public class PortfolioResponse {
         this.managerTypeId = managerTypeId;
     }
 
-    public String customerName() {
+    public String getCustomerName() {
         return customerName;
     }
 
@@ -53,19 +53,19 @@ public class PortfolioResponse {
         this.customerName = customerName;
     }
 
-    public LocalDate date() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String description() {
+    public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
