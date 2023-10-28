@@ -1,6 +1,7 @@
 package com.example.smmproject.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "portfolio_category")
@@ -9,11 +10,11 @@ public class PortfolioCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String portfolioType;
-    @OneToOne(mappedBy = "portfolioCategory")
-    private Portfolio portfolio;
+    @OneToMany(mappedBy = "portfolioCategory")
+    private List<Portfolio> portfolios;
 
 
-    public Long getId() {
+    public Long id() {
         return id;
     }
 
@@ -21,7 +22,7 @@ public class PortfolioCategory {
         this.id = id;
     }
 
-    public String getPortfolioType() {
+    public String portfolioType() {
         return portfolioType;
     }
 
@@ -29,11 +30,11 @@ public class PortfolioCategory {
         this.portfolioType = portfolioType;
     }
 
-    public Portfolio getPortfolio() {
-        return portfolio;
+    public List<Portfolio> portfolios() {
+        return portfolios;
     }
 
-    public void setPortfolio(Portfolio portfolio) {
-        this.portfolio = portfolio;
+    public void setPortfolios(List<Portfolio> portfolios) {
+        this.portfolios = portfolios;
     }
 }

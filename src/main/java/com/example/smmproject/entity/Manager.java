@@ -1,6 +1,7 @@
 package com.example.smmproject.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "managers")
@@ -11,10 +12,10 @@ public class Manager {
     private Long id;
 
     private String managerType;
-
+    @Lob
     private String context;
-    @OneToOne(mappedBy = "manager")
-    private Portfolio portfolio;
+    @OneToMany(mappedBy = "manager")
+    private List<Portfolio> portfolios;
 
     public Long id() {
         return id;
@@ -40,11 +41,11 @@ public class Manager {
         this.context = context;
     }
 
-    public Portfolio portfolio() {
-        return portfolio;
+    public List<Portfolio> portfolios() {
+        return portfolios;
     }
 
-    public void setPortfolio(Portfolio portfolio) {
-        this.portfolio = portfolio;
+    public void setPortfolios(List<Portfolio> portfolios) {
+        this.portfolios = portfolios;
     }
 }

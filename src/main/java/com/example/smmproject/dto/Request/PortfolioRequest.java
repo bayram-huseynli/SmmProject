@@ -2,19 +2,13 @@ package com.example.smmproject.dto.Request;
 
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 public class PortfolioRequest {
     private Long portfolioCategoryId;
     private String name;
     private Long managerType;
     private String customerName;
     private LocalDate date;
-    private String shortDescription;
-    private List<String> goals = new ArrayList<>();
-    private List<String> services = new ArrayList<>();
-    private List<String> photos = new ArrayList<>();
+    private String description;
 
     public Long portfolioCategoryId() {
         return portfolioCategoryId;
@@ -56,35 +50,11 @@ public class PortfolioRequest {
         this.date = date;
     }
 
-    public String shortDescription() {
-        return shortDescription;
+    public String description() {
+        return description;
     }
 
-    public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
-    }
-
-    public List<String> goals() {
-        return goals;
-    }
-
-    public void setGoals(List<String> goals) {
-        this.goals = goals;
-    }
-
-    public List<String> services() {
-        return services;
-    }
-
-    public void setServices(List<String> services) {
-        this.services = services;
-    }
-
-    public List<String> photos() {
-        return photos;
-    }
-
-    public void setPhotos(List<String> photos) {
-        this.photos = photos;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

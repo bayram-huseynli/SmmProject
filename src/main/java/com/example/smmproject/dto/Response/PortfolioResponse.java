@@ -1,8 +1,7 @@
 package com.example.smmproject.dto.Response;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class PortfolioResponse {
     private Long id;
@@ -10,11 +9,9 @@ public class PortfolioResponse {
     private String name;
     private Long managerTypeId;
     private String customerName;
+    private String description;
     private LocalDate date;
-    private String shortDescription;
-    private List<String> goals = new ArrayList<>();
-    private List<String> services = new ArrayList<>();
-    private List<String> photos = new ArrayList<>();
+;
 
     public Long id() {
         return id;
@@ -64,35 +61,11 @@ public class PortfolioResponse {
         this.date = date;
     }
 
-    public String shortDescription() {
-        return shortDescription;
+    public String description() {
+        return description;
     }
 
-    public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
-    }
-
-    public List<String> goals() {
-        return goals;
-    }
-
-    public void setGoals(List<String> goals) {
-        this.goals = goals;
-    }
-
-    public List<String> services() {
-        return services;
-    }
-
-    public void setServices(List<String> services) {
-        this.services = services;
-    }
-
-    public List<String> photos() {
-        return photos;
-    }
-
-    public void setPhotos(List<String> photos) {
-        this.photos = photos;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
