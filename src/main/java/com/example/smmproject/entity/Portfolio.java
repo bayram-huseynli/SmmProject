@@ -4,6 +4,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "portfolio")
@@ -17,14 +19,91 @@ public class Portfolio {
     private LocalDate date;
     @Column(length = 1000)
     private String shortDescription;
-    private String doneWorks;
-
+    @ElementCollection
+    private List<String> goals = new ArrayList<>();
+    @ElementCollection
+    private List<String> services = new ArrayList<>();
+    @ElementCollection
+    @Column(name = "photo_links",length = 100000)
+    private List<String> photos = new ArrayList<>();
     @OneToOne
     @JoinColumn(name = "portfolio_category_id")
     private PortfolioCategory portfolioCategory;
     @OneToOne
     @JoinColumn(name = "manager_id")
     private Manager manager;
+
+    public Long id() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String name() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String customerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public LocalDate date() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public String shortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
+    public List<String> goals() {
+        return goals;
+    }
+
+    public void setGoals(List<String> goals) {
+        this.goals = goals;
+    }
+
+    public List<String> services() {
+        return services;
+    }
+
+    public void setServices(List<String> services) {
+        this.services = services;
+    }
+
+    public List<String> photos() {
+        return photos;
+    }
+
+    public void setPhotos(List<String> photos) {
+        this.photos = photos;
+    }
+
+    public PortfolioCategory portfolioCategory() {
+        return portfolioCategory;
+    }
+
+    public void setPortfolioCategory(PortfolioCategory portfolioCategory) {
+        this.portfolioCategory = portfolioCategory;
+    }
 
     public Manager manager() {
         return manager;
@@ -33,60 +112,5 @@ public class Portfolio {
     public void setManager(Manager manager) {
         this.manager = manager;
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getShortDescription() {
-        return shortDescription;
-    }
-
-    public void setShortDescription(String shortDescription) {
-        this.shortDescription = shortDescription;
-    }
-
-    public String getDoneWorks() {
-        return doneWorks;
-    }
-
-    public void setDoneWorks(String doneWorks) {
-        this.doneWorks = doneWorks;
-    }
-
-    public PortfolioCategory getPortfolioCategory() {
-        return portfolioCategory;
-    }
-
-    public void setPortfolioCategory(PortfolioCategory portfolioCategory) {
-        this.portfolioCategory = portfolioCategory;
-    }
 }
+

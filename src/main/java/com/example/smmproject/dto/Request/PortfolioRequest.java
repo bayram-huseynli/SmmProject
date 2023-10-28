@@ -2,6 +2,8 @@ package com.example.smmproject.dto.Request;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PortfolioRequest {
     private Long portfolioCategoryId;
@@ -10,7 +12,9 @@ public class PortfolioRequest {
     private String customerName;
     private LocalDate date;
     private String shortDescription;
-    private String doneWorks;
+    private List<String> goals = new ArrayList<>();
+    private List<String> services = new ArrayList<>();
+    private List<String> photos = new ArrayList<>();
 
     public Long portfolioCategoryId() {
         return portfolioCategoryId;
@@ -26,6 +30,14 @@ public class PortfolioRequest {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long managerType() {
+        return managerType;
+    }
+
+    public void setManagerType(Long managerType) {
+        this.managerType = managerType;
     }
 
     public String customerName() {
@@ -52,19 +64,27 @@ public class PortfolioRequest {
         this.shortDescription = shortDescription;
     }
 
-    public String doneWorks() {
-        return doneWorks;
+    public List<String> goals() {
+        return goals;
     }
 
-    public void setDoneWorks(String doneWorks) {
-        this.doneWorks = doneWorks;
+    public void setGoals(List<String> goals) {
+        this.goals = goals;
     }
 
-    public Long managerType() {
-        return managerType;
+    public List<String> services() {
+        return services;
     }
 
-    public void setManagerType(Long managerType) {
-        this.managerType = managerType;
+    public void setServices(List<String> services) {
+        this.services = services;
+    }
+
+    public List<String> photos() {
+        return photos;
+    }
+
+    public void setPhotos(List<String> photos) {
+        this.photos = photos;
     }
 }
