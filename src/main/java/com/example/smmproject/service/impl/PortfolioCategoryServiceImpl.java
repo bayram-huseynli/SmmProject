@@ -33,7 +33,7 @@ public class PortfolioCategoryServiceImpl implements PortfolioCategoryService {
 
     @Override
     public void add(PortfolioCategoryRequest portfolioCategoryRequest) {
-        if (portfolioCategoryRepository.existsByPortfolioType(portfolioCategoryRequest.portfolioType())){
+        if (portfolioCategoryRepository.existsByPortfolioType(portfolioCategoryRequest.getPortfolioType())){
             throw new BadRequest(NOT_FOUND_ERROR);
         }
         PortfolioCategory portfolioCategory=modelMapper.map(portfolioCategoryRequest,PortfolioCategory.class);
