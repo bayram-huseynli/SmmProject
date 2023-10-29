@@ -14,13 +14,11 @@ public class Portfolio {
     private Long id;
     private String name;
     private String customerName;
-    @DateTimeFormat()
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     @Lob
     private String description;
-    @ManyToOne
-    @JoinColumn(name = "portfolio_category_id")
-    private PortfolioCategory portfolioCategory;
+
     @ManyToOne
     @JoinColumn(name = "manager_id")
     private Manager manager;
@@ -65,13 +63,7 @@ public class Portfolio {
         this.description = description;
     }
 
-    public PortfolioCategory getPortfolioCategory() {
-        return portfolioCategory;
-    }
 
-    public void setPortfolioCategory(PortfolioCategory portfolioCategory) {
-        this.portfolioCategory = portfolioCategory;
-    }
 
     public Manager getManager() {
         return manager;

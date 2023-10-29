@@ -21,11 +21,11 @@ public class BlogController {
     @GetMapping("/all")
     ResponseEntity<List<BlogResponse>> getAll(){
         List<BlogResponse> blogs=blogService.getAll();
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(blogs,HttpStatus.OK);
     }
 
     @PostMapping("/add")
-    ResponseEntity<BlogRequest> add(BlogRequest blogRequest){
+    ResponseEntity<Void> add(BlogRequest blogRequest){
         blogService.add(blogRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

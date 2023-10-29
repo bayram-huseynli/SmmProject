@@ -1,22 +1,18 @@
 package com.example.smmproject.dto.Request;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 public class PortfolioRequest {
-    private Long portfolioCategoryId;
+
     private String name;
-    private Long managerType;
+    private Long managerId;
     private String customerName;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
     private String description;
 
-    public Long getPortfolioCategoryId() {
-        return portfolioCategoryId;
-    }
-
-    public void setPortfolioCategoryId(Long portfolioCategoryId) {
-        this.portfolioCategoryId = portfolioCategoryId;
-    }
 
     public String getName() {
         return name;
@@ -26,12 +22,12 @@ public class PortfolioRequest {
         this.name = name;
     }
 
-    public Long getManagerType() {
-        return managerType;
+    public Long getManagerId() {
+        return managerId;
     }
 
-    public void setManagerType(Long managerType) {
-        this.managerType = managerType;
+    public void setManagerId(Long managerId) {
+        this.managerId = managerId;
     }
 
     public String getCustomerName() {

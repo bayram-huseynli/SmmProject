@@ -1,7 +1,6 @@
 package com.example.smmproject.entity;
 
 import javax.persistence.*;
-import javax.print.attribute.standard.MediaSize;
 
 @Entity
 @Table(name = "contactUs")

@@ -2,11 +2,11 @@ package com.example.smmproject.controller;
 
 
 import com.example.smmproject.dto.Request.BlogCategoryRequest;
-import com.example.smmproject.dto.Request.BlogRequest;
+
 import com.example.smmproject.dto.Response.BlogCategoryResponse;
-import com.example.smmproject.dto.Response.BlogResponse;
+
 import com.example.smmproject.service.BlogCategoryService;
-import com.example.smmproject.service.BlogService;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,13 +24,14 @@ public class BlogCategoryController {
     }
 
     @GetMapping("/all")
-    ResponseEntity<List<BlogResponse>> getAll(){
+    ResponseEntity<List<BlogCategoryResponse>> getAll(){
         List<BlogCategoryResponse> blogs=blogCategoryService.getAll();
-        return new ResponseEntity<>(HttpStatus.OK);
+
+        return new ResponseEntity<>(blogs,HttpStatus.OK);
     }
 
     @PostMapping("/add")
-    ResponseEntity<BlogCategoryRequest> add(BlogCategoryRequest blogCategoryRequest){
+    ResponseEntity<Void> add(BlogCategoryRequest blogCategoryRequest){
         blogCategoryService.add(blogCategoryRequest);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -38,7 +39,7 @@ public class BlogCategoryController {
     @GetMapping("/getById/{id}")
     ResponseEntity<BlogCategoryResponse> getById(@PathVariable Long id){
         BlogCategoryResponse blogCategoryResponse= blogCategoryService.getById(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(blogCategoryResponse,HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")

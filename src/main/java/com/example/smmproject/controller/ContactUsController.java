@@ -3,7 +3,6 @@ package com.example.smmproject.controller;
 import com.example.smmproject.dto.Request.ContactUsRequest;
 import com.example.smmproject.dto.Response.ContactUsResponse;
 import com.example.smmproject.service.ContactUsService;
-import org.springframework.boot.autoconfigure.session.RedisSessionProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
