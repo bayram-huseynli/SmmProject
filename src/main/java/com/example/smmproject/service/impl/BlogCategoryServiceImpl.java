@@ -35,7 +35,7 @@ public class BlogCategoryServiceImpl implements BlogCategoryService {
     @Override
     public void add(BlogCategoryRequest blogCategoryRequest) {
     if(blogCategoryRepository.existsByBlogType(blogCategoryRequest.getBlogType())){
-        throw new BadRequest(NOT_FOUND_ERROR);
+        throw new BadRequest(BAD_REQUEST_MESSAGE);
     }
         BlogCategory blogCategory=modelMapper.map(blogCategoryRequest,BlogCategory.class);
         blogCategoryRepository.save(blogCategory);
