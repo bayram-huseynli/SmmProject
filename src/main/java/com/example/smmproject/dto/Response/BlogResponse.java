@@ -1,6 +1,7 @@
 package com.example.smmproject.dto.Response;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class BlogResponse {
     private Long id;
@@ -8,6 +9,16 @@ public class BlogResponse {
     private String title;
     private String content;
     private LocalDate date;
+
+    private List<String> socialMediaLinks;
+
+    public List<String> getSocialMediaLinks() {
+        return socialMediaLinks;
+    }
+
+    public void setSocialMediaLinks(List<String> socialMediaLinks) {
+        this.socialMediaLinks = socialMediaLinks;
+    }
 
     public Long getId() {
         return id;

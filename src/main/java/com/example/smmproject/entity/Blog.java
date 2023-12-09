@@ -2,6 +2,7 @@ package com.example.smmproject.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "blog")
@@ -13,6 +14,16 @@ public class Blog {
     @Lob
     private String content;
     private LocalDate date;
+    @ElementCollection
+    private List<String> socialMediaLinks;
+
+    public void addSocialMediaLink(String link) {
+        this.socialMediaLinks.add(link);
+    }
+
+    public List<String> getSocialMediaLinks() {
+        return socialMediaLinks;
+    }
     @ManyToOne
     @JoinColumn(name = "blog_category_id")
     private BlogCategory blogCategory;

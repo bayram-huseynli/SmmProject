@@ -2,12 +2,23 @@ package com.example.smmproject.dto.Request;
 
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class BlogRequest {
     private Long blogCategoryId;
     private String title;
     private String content;
     private LocalDate date;
+
+    private List<String> socialMediaLinks;
+
+    public List<String> getSocialMediaLinks() {
+        return socialMediaLinks;
+    }
+
+    public void setSocialMediaLinks(List<String> socialMediaLinks) {
+        this.socialMediaLinks = socialMediaLinks;
+    }
 
     public Long getBlogCategoryId() {
         return blogCategoryId;
