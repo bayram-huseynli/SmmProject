@@ -15,6 +15,8 @@ public class Blog {
     private String content;
     private LocalDate date;
     @ElementCollection
+    private List<String> imageLinks;
+    @ElementCollection
     private List<String> socialMediaLinks;
 
     public void addSocialMediaLink(String link) {

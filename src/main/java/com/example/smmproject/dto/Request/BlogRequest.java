@@ -9,8 +9,16 @@ public class BlogRequest {
     private String title;
     private String content;
     private LocalDate date;
-
     private List<String> socialMediaLinks;
+    private List<String> imageLinks;
+
+    public List<String> getImageLinks() {
+        return imageLinks;
+    }
+
+    public void setImageLinks(List<String> imageLinks) {
+        this.imageLinks = imageLinks;
+    }
 
     public List<String> getSocialMediaLinks() {
         return socialMediaLinks;
