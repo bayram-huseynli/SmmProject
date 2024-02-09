@@ -37,26 +37,26 @@ public class SecurityConfig implements ApplicationSecurityConfig {
     private void configurePublicOperation(AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry
                                                   http){
         http.
-                requestMatchers(HttpMethod.GET,"/booking/v1").permitAll();
+                requestMatchers(HttpMethod.GET,"/manager/v1").permitAll();
     }
 
     @SneakyThrows
     private void configureUserOperation(AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry
                                                 http){
         http.
-                requestMatchers(HttpMethod.GET,"/booking/v1/{id}").authenticated();
+                requestMatchers(HttpMethod.GET,"/manager/v1/{id}").authenticated();
     }
     @SneakyThrows
     private void configureStuffOperation(AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry
                                                  http) {
         http.
-                requestMatchers(HttpMethod.DELETE, "/booking/v1/{id}").permitAll();
+                requestMatchers(HttpMethod.DELETE, "/manager/v1/{id}").permitAll();
     }
     @SneakyThrows
     private void configureAdminOperation(AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry
                                                  http) {
         http.
-                requestMatchers(HttpMethod.POST, "/booking/v1/payments/{paymentId}/users/{userId}").permitAll();
+                requestMatchers(HttpMethod.POST, "/manager/v1/{userId}").permitAll();
     }
     private String admin(){
         return UserRole.ROLE_ADMIN.name();
