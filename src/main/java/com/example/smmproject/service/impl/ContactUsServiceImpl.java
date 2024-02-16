@@ -6,6 +6,8 @@ import com.example.smmproject.entity.ContactUs;
 import com.example.smmproject.repository.ContactUsRepository;
 import com.example.smmproject.service.ContactUsService;
 import org.modelmapper.ModelMapper;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,10 +17,12 @@ public class ContactUsServiceImpl implements ContactUsService {
 
     private final ModelMapper modelMapper;
     private final ContactUsRepository contactUsRepository;
+    private final JavaMailSender mailSender;
 
-    public ContactUsServiceImpl(ModelMapper modelMapper, ContactUsRepository contactUsRepository) {
+    public ContactUsServiceImpl(ModelMapper modelMapper, ContactUsRepository contactUsRepository, JavaMailSender mailSender) {
         this.modelMapper = modelMapper;
         this.contactUsRepository = contactUsRepository;
+        this.mailSender = mailSender;
     }
 
 
@@ -49,6 +53,19 @@ public class ContactUsServiceImpl implements ContactUsService {
         ContactUs contactUs=modelMapper.map(contactUsRequest,ContactUs.class);
         contactUs.setId(id);
         return modelMapper.map(contactUsRepository.save(contactUs),ContactUsResponse.class);
+    }
+
+    public void sendEmail(String toEmail,
+                          String subject,
+                          String body){
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("");
+        message.setTo(toEmail);
+        message.setText(body);
+        message.setSubject(subject);
+
+        mailSender.send(message);
+
     }
 
     @Override

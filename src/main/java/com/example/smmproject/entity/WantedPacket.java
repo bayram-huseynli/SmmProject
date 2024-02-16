@@ -7,54 +7,25 @@
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        @Column(name = "tiktok_post")
-        private Long tiktokPost;
-        @Column(name = "instagram_post")
-        private Long instagramPost;
+        @Column(name = "video")
+        private Long video;
+        @Column(name = "photo")
+        private Long photo;
 
-        @Column(name = "instagram_story")
-        private Long instagramStory;
+        @Column(name = "graphic_Post")
+        private Long graphicPost;
 
-        @Column(name = "tiktok_story")
-        private Long tiktokStory;
+        @Column(name = "motion_Video")
+        private Long motionVideo;
 
-        public Long getId() {
-            return id;
-        }
+        @Column(name = "location_Targeding")
+        private Long locationTargeding;
 
-        public void setId(Long id) {
-            this.id = id;
-        }
+        @Column(name = "menu_System")
+        private Long menuSystem;
 
-        public Long getTiktokPost() {
-            return tiktokPost;
-        }
+        @Column(name = "tiktok_Management")
+        private Long tiktokManagement;
 
-        public void setTiktokPost(Long tiktokPost) {
-            this.tiktokPost = tiktokPost;
-        }
 
-        public Long getInstagramPost() {
-            return instagramPost;
-        }
-
-        public void setInstagramPost(Long instagramPost) {
-            this.instagramPost = instagramPost;
-        }
-
-        public Long getInstagramStory() {
-            return instagramStory;
-        }
-
-        public void setInstagramStory(Long instagramStory) {
-            this.instagramStory = instagramStory;
-        }
-
-        public Long getTiktokStory() {
-            return tiktokStory;
-        }
-
-        public void setTiktokStory(Long tiktokStory) {
-            this.tiktokStory = tiktokStory;
-        }
     }

@@ -7,6 +7,8 @@ import com.example.smmproject.exceptions.NotFoundException;
 import com.example.smmproject.repository.BlogRepository;
 import com.example.smmproject.service.BlogService;
 import org.modelmapper.ModelMapper;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,12 +19,14 @@ public class BlogServiceImpl implements BlogService {
     private final ModelMapper modelMapper;
     private final BlogRepository blogRepository;
 
+
     private static final String NOT_FOUND_ERROR="Not found this id";
 
     public BlogServiceImpl(ModelMapper modelMapper, BlogRepository blogRepository) {
         this.modelMapper = modelMapper;
         this.blogRepository = blogRepository;
     }
+
 
     @Override
     public List<BlogResponse> getAll() {

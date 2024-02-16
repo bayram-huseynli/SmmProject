@@ -14,6 +14,7 @@ public interface ContactUsService {
     ContactUsResponse getById(Long id);
 
     ContactUsResponse update(Long id,ContactUsRequest contactUsRequest);
+    void sendEmail(String toEmail,String subject,String body);
 
     void delete(Long id);
 }
