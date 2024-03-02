@@ -1,10 +1,28 @@
 package com.example.smmproject.dto.Request;
 
 public class WantedPacketRequest {
+    private Long video;
+    private Long photo;
     private Long tiktokPost;
     private Long instagramPost;
     private Long instagramStory;
     private Long tiktokStory;
+
+    public Long getVideo() {
+        return video;
+    }
+
+    public void setVideo(Long video) {
+        this.video = video;
+    }
+
+    public Long getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Long photo) {
+        this.photo = photo;
+    }
 
     public Long getTiktokPost() {
         return tiktokPost;

@@ -28,7 +28,6 @@ public class JwtService {
     private Key key;
 
     public Claim parseToken(String token) {
-
         return (Claim) Jwts.parser();
     }
 
