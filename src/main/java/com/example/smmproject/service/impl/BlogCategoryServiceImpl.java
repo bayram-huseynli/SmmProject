@@ -1,7 +1,7 @@
 package com.example.smmproject.service.impl;
 
-import com.example.smmproject.dto.Request.BlogCategoryRequest;
-import com.example.smmproject.dto.Response.BlogCategoryResponse;
+import com.example.smmproject.dto.request.BlogCategoryRequest;
+import com.example.smmproject.dto.response.BlogCategoryResponse;
 import com.example.smmproject.entity.BlogCategory;
 import com.example.smmproject.exceptions.BadRequest;
 import com.example.smmproject.exceptions.NotFoundException;

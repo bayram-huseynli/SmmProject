@@ -1,14 +1,12 @@
 package com.example.smmproject.service.impl;
 
-import com.example.smmproject.dto.Request.BlogRequest;
-import com.example.smmproject.dto.Response.BlogResponse;
+import com.example.smmproject.dto.request.BlogRequest;
+import com.example.smmproject.dto.response.BlogResponse;
 import com.example.smmproject.entity.Blog;
 import com.example.smmproject.exceptions.NotFoundException;
 import com.example.smmproject.repository.BlogRepository;
 import com.example.smmproject.service.BlogService;
 import org.modelmapper.ModelMapper;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.example.smmproject.service.impl;
 
-import com.example.smmproject.dto.Request.AboutUsRequest;
-import com.example.smmproject.dto.Response.AboutUsResponse;
+import com.example.smmproject.dto.request.AboutUsRequest;
+import com.example.smmproject.dto.response.AboutUsResponse;
 import com.example.smmproject.entity.AboutUs;
 import com.example.smmproject.repository.AboutUsRepository;
 import com.example.smmproject.service.AboutUsService;

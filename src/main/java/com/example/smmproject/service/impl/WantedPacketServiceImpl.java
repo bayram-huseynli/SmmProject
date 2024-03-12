@@ -1,6 +1,6 @@
 package com.example.smmproject.service.impl;
 
-import com.example.smmproject.dto.Request.WantedPacketRequest;
+import com.example.smmproject.dto.request.WantedPacketRequest;
 import com.example.smmproject.service.WantedPacketService;
 import org.springframework.stereotype.Service;
 

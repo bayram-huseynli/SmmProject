@@ -1,7 +1,7 @@
 package com.example.smmproject.controller;
 
-import com.example.smmproject.dto.Request.AboutUsRequest;
-import com.example.smmproject.dto.Response.AboutUsResponse;
+import com.example.smmproject.dto.request.AboutUsRequest;
+import com.example.smmproject.dto.response.AboutUsResponse;
 import com.example.smmproject.service.AboutUsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

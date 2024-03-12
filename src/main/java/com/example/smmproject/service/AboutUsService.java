@@ -1,7 +1,7 @@
 package com.example.smmproject.service;
 
-import com.example.smmproject.dto.Request.AboutUsRequest;
-import com.example.smmproject.dto.Response.AboutUsResponse;
+import com.example.smmproject.dto.request.AboutUsRequest;
+import com.example.smmproject.dto.response.AboutUsResponse;
 
 import java.util.List;
 

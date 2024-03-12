@@ -16,7 +16,7 @@ public class Portfolio {
     private String customerName;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String description;
 
     @ManyToOne

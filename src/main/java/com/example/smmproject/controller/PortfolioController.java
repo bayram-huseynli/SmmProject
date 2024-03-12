@@ -1,7 +1,7 @@
 package com.example.smmproject.controller;
 
-import com.example.smmproject.dto.Request.PortfolioRequest;
-import com.example.smmproject.dto.Response.PortfolioResponse;
+import com.example.smmproject.dto.request.PortfolioRequest;
+import com.example.smmproject.dto.response.PortfolioResponse;
 import com.example.smmproject.service.PortfolioService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

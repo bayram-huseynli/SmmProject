@@ -2,69 +2,61 @@ package com.example.smmproject.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-@Table(name = "contactUs")
+@Table(name = "contact_us")
 public class ContactUs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ElementCollection
+    private List<String> emails=new ArrayList<>();
 
-    private String fullName;
+    @ElementCollection
+    private List<String> phoneNumbers = new ArrayList<>();
 
-    private String email;
+    private String location;
 
-    private String phoneNumber;
 
-    private String contextType;
-
-    private String context;
 
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public ContactUs setId(Long id) {
         this.id = id;
+        return this;
     }
 
-    public String getFullName() {
-        return fullName;
+    public List<String> getEmails() {
+        return emails;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public ContactUs setEmails(List<String> emails) {
+        this.emails = emails;
+        return this;
     }
 
-    public String getEmail() {
-        return email;
+    public List<String> getPhoneNumbers() {
+        return phoneNumbers;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public ContactUs setPhoneNumbers(List<String> phoneNumbers) {
+        this.phoneNumbers = phoneNumbers;
+        return this;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getLocation() {
+        return location;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public ContactUs setLocation(String location) {
+        this.location = location;
+        return this;
     }
 
-    public String getContextType() {
-        return contextType;
-    }
 
-    public void setContextType(String contextType) {
-        this.contextType = contextType;
-    }
-
-    public String getContext() {
-        return context;
-    }
-
-    public void setContext(String context) {
-        this.context = context;
-    }
 }

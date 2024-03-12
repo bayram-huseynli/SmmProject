@@ -12,7 +12,7 @@ public class Manager {
     private Long id;
 
     private String managerType;
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String context;
     @OneToMany(mappedBy = "manager")
     private List<Portfolio> portfolios;

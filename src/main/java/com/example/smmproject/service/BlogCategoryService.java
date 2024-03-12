@@ -1,7 +1,7 @@
 package com.example.smmproject.service;
 
-import com.example.smmproject.dto.Request.BlogCategoryRequest;
-import com.example.smmproject.dto.Response.BlogCategoryResponse;
+import com.example.smmproject.dto.request.BlogCategoryRequest;
+import com.example.smmproject.dto.response.BlogCategoryResponse;
 
 import java.util.List;
 

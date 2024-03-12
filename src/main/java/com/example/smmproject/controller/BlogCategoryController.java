@@ -1,9 +1,9 @@
 package com.example.smmproject.controller;
 
 
-import com.example.smmproject.dto.Request.BlogCategoryRequest;
+import com.example.smmproject.dto.request.BlogCategoryRequest;
 
-import com.example.smmproject.dto.Response.BlogCategoryResponse;
+import com.example.smmproject.dto.response.BlogCategoryResponse;
 
 import com.example.smmproject.service.BlogCategoryService;
 

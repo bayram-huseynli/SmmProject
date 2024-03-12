@@ -11,14 +11,19 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String content;
     private LocalDate date;
     @ElementCollection
     private List<String> imageLinks;
     @ElementCollection
     private List<String> socialMediaLinks;
+    private String fullName;
 
+
+    @ManyToOne
+    @JoinColumn(name = "blog_category_id")
+    private BlogCategory blogCategory;
     public void addSocialMediaLink(String link) {
         this.socialMediaLinks.add(link);
     }
@@ -26,9 +31,6 @@ public class Blog {
     public List<String> getSocialMediaLinks() {
         return socialMediaLinks;
     }
-    @ManyToOne
-    @JoinColumn(name = "blog_category_id")
-    private BlogCategory blogCategory;
 
     public Long getId() {
         return id;
@@ -68,5 +70,28 @@ public class Blog {
 
     public void setBlogCategory(BlogCategory blogCategory) {
         this.blogCategory = blogCategory;
+    }
+
+    public List<String> getImageLinks() {
+        return imageLinks;
+    }
+
+    public Blog setImageLinks(List<String> imageLinks) {
+        this.imageLinks = imageLinks;
+        return this;
+    }
+
+    public Blog setSocialMediaLinks(List<String> socialMediaLinks) {
+        this.socialMediaLinks = socialMediaLinks;
+        return this;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public Blog setFullName(String fullName) {
+        this.fullName = fullName;
+        return this;
     }
 }

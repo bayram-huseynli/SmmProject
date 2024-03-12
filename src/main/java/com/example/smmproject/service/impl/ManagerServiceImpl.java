@@ -1,7 +1,7 @@
 package com.example.smmproject.service.impl;
 
-import com.example.smmproject.dto.Request.ManagerRequest;
-import com.example.smmproject.dto.Response.ManagerResponse;
+import com.example.smmproject.dto.request.ManagerRequest;
+import com.example.smmproject.dto.response.ManagerResponse;
 import com.example.smmproject.entity.Manager;
 import com.example.smmproject.repository.ManagerRepository;
 import com.example.smmproject.service.ManagerService;
@@ -37,13 +37,13 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Override
     public ManagerResponse getById(Long id) {
-        Manager manager=managerRepository.findById(id).orElseThrow(()-> new RuntimeException());
+        Manager manager=managerRepository.findById(id).orElseThrow(RuntimeException::new);
         return modelMapper.map(manager,ManagerResponse.class);
     }
 
     @Override
     public ManagerResponse update(Long id, ManagerRequest managerRequest) {
-    managerRepository.findById(id).orElseThrow(()-> new RuntimeException());
+    managerRepository.findById(id).orElseThrow(RuntimeException::new);
     Manager manager=modelMapper.map(managerRequest,Manager.class);
     manager.setId(id);
     return modelMapper.map(managerRepository.save(manager),ManagerResponse.class);
@@ -51,8 +51,7 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Override
     public void delete(Long id) {
-
-        Manager manager=managerRepository.findById(id).orElseThrow(()-> new RuntimeException());
+        Manager manager=managerRepository.findById(id).orElseThrow(RuntimeException::new);
         managerRepository.delete(manager);
 
     }
