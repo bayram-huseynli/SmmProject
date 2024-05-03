@@ -4,6 +4,7 @@ import com.example.smmproject.dto.request.FeedBackRequest;
 import com.example.smmproject.dto.response.FeedBackResponse;
 import com.example.smmproject.entity.Feedback;
 
+import com.example.smmproject.exceptions.NotFoundException;
 import com.example.smmproject.repository.FeedBackRepository;
 import com.example.smmproject.service.FeedBackService;
 import org.modelmapper.ModelMapper;
@@ -19,6 +20,8 @@ public class FeedBackServiceImpl implements FeedBackService {
     private final ModelMapper modelMapper;
     private final FeedBackRepository feedBackRepository;
     private final JavaMailSender mailSender;
+
+    private static final String NOT_FOUND_ERROR = "not found this id";
 
     public FeedBackServiceImpl(ModelMapper modelMapper, FeedBackRepository feedBackRepository, JavaMailSender mailSender) {
         this.modelMapper = modelMapper;
@@ -44,13 +47,13 @@ public class FeedBackServiceImpl implements FeedBackService {
 
     @Override
     public FeedBackResponse getById(Long id) {
-        Feedback feedback = feedBackRepository.findById(id).orElseThrow(RuntimeException::new);
+        Feedback feedback = feedBackRepository.findById(id).orElseThrow(()-> new NotFoundException(NOT_FOUND_ERROR));
         return modelMapper.map(feedback, FeedBackResponse.class);
     }
 
     @Override
     public FeedBackResponse update(Long id, FeedBackRequest feedBackRequest) {
-        feedBackRepository.findById(id).orElseThrow(RuntimeException::new);
+        feedBackRepository.findById(id).orElseThrow(()-> new NotFoundException(NOT_FOUND_ERROR));
         Feedback feedback =modelMapper.map(feedBackRequest, Feedback.class);
         feedback.setId(id);
         return modelMapper.map(feedBackRepository.save(feedback), FeedBackResponse.class);
@@ -71,7 +74,7 @@ public class FeedBackServiceImpl implements FeedBackService {
 
     @Override
     public void delete(Long id) {
-        Feedback feedback = feedBackRepository.findById(id).orElseThrow(RuntimeException::new);
+        Feedback feedback = feedBackRepository.findById(id).orElseThrow(()-> new NotFoundException(NOT_FOUND_ERROR));
         feedBackRepository.delete(feedback);
 
     }

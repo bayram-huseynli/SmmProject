@@ -47,6 +47,14 @@ public class BlogCategoryServiceImpl implements BlogCategoryService {
         return modelMapper.map(blogCategory,BlogCategoryResponse.class);
     }
 
+    public BlogCategoryResponse updateCategory(Long id,BlogCategoryRequest blogCategoryRequest){
+      blogCategoryRepository.findById(id).orElseThrow(()-> new NotFoundException(NOT_FOUND_ERROR));
+      BlogCategory blogCategory = modelMapper.map(blogCategoryRequest,BlogCategory.class);
+      blogCategoryRepository.save(blogCategory);
+      return modelMapper.map(blogCategory,BlogCategoryResponse.class);
+
+    }
+
     @Override
     public void delete(Long id) {
     BlogCategory blogCategory=blogCategoryRepository.findById(id).orElseThrow(()->new NotFoundException(NOT_FOUND_ERROR));

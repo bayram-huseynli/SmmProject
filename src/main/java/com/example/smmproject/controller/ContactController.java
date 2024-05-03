@@ -3,10 +3,7 @@ package com.example.smmproject.controller;
 import com.example.smmproject.dto.request.ContactUsRequest;
 import com.example.smmproject.dto.response.ContactUsResponse;
 import com.example.smmproject.service.ContactUsService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,10 @@ public class ContactController {
     @PostMapping("/add")
     public Long addContact(ContactUsRequest contactUsRequest){
         return contactUsService.addContactUs(contactUsRequest);
+    }
+    @DeleteMapping("/delete/{id}")
+    public void delete(@PathVariable Long id){
+        contactUsService.delete(id);
     }
 
 }

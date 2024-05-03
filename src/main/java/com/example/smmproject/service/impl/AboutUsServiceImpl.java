@@ -3,6 +3,7 @@ package com.example.smmproject.service.impl;
 import com.example.smmproject.dto.request.AboutUsRequest;
 import com.example.smmproject.dto.response.AboutUsResponse;
 import com.example.smmproject.entity.AboutUs;
+import com.example.smmproject.exceptions.NotFoundException;
 import com.example.smmproject.repository.AboutUsRepository;
 import com.example.smmproject.service.AboutUsService;
 import org.modelmapper.ModelMapper;
@@ -16,6 +17,8 @@ public class AboutUsServiceImpl implements AboutUsService {
 
     private final ModelMapper modelMapper;
     private final AboutUsRepository aboutUsRepository;
+
+    private static final String NOT_FOUND_ERROR="Not found this id";
 
     public AboutUsServiceImpl(ModelMapper modelMapper, AboutUsRepository aboutUsRepository) {
         this.modelMapper = modelMapper;
@@ -37,12 +40,12 @@ public class AboutUsServiceImpl implements AboutUsService {
     }
     @Override
     public AboutUsResponse getById(Long id){
-        AboutUs aboutUs=aboutUsRepository.findById(id).orElseThrow(()-> new RuntimeException());
+        AboutUs aboutUs=aboutUsRepository.findById(id).orElseThrow(()-> new NotFoundException(NOT_FOUND_ERROR));
         return modelMapper.map(aboutUs,AboutUsResponse.class);
     }
     @Override
     public AboutUsResponse update(Long id, AboutUsRequest aboutUsRequest){
-        aboutUsRepository.findById(id).orElseThrow(()-> new RuntimeException());
+        aboutUsRepository.findById(id).orElseThrow(()-> new NotFoundException(NOT_FOUND_ERROR));
         AboutUs aboutUs=modelMapper.map(aboutUsRequest,AboutUs.class);
         aboutUs.setId(id);
         return modelMapper.map(aboutUsRepository.save(aboutUs),AboutUsResponse.class);
@@ -50,7 +53,7 @@ public class AboutUsServiceImpl implements AboutUsService {
     }
     @Override
     public void delete(Long id){
-        AboutUs aboutUs=aboutUsRepository.findById(id).orElseThrow(()-> new RuntimeException());
+        AboutUs aboutUs=aboutUsRepository.findById(id).orElseThrow(()-> new NotFoundException(NOT_FOUND_ERROR));
         aboutUsRepository.delete(aboutUs);
     }
 

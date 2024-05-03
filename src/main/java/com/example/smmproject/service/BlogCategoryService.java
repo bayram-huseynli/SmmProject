@@ -13,5 +13,7 @@ public interface BlogCategoryService {
 
     BlogCategoryResponse getById(Long id);
 
+    BlogCategoryResponse updateCategory(Long id,BlogCategoryRequest blogCategoryRequest);
+
     void delete(Long id);
 }

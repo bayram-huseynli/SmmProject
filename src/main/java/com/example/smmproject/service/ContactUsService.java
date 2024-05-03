@@ -8,4 +8,6 @@ import java.util.List;
 public interface ContactUsService {
     List<ContactUsResponse> getAll();
     Long addContactUs(ContactUsRequest contactUsRequest);
+
+    void delete(Long id);
 }

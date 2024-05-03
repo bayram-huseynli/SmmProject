@@ -42,6 +42,13 @@ public class BlogCategoryController {
         return new ResponseEntity<>(blogCategoryResponse,HttpStatus.OK);
     }
 
+    @PutMapping("/update/{id}")
+    ResponseEntity<BlogCategoryResponse> updateCategory(@PathVariable Long id,@RequestBody BlogCategoryRequest blogCategoryRequest){
+        blogCategoryService.updateCategory(id, blogCategoryRequest);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
     @DeleteMapping("/delete/{id}")
     ResponseEntity<Long> delete(@PathVariable Long id){
         blogCategoryService.delete(id);

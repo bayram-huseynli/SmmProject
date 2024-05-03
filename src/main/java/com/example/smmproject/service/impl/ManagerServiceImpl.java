@@ -3,6 +3,7 @@ package com.example.smmproject.service.impl;
 import com.example.smmproject.dto.request.ManagerRequest;
 import com.example.smmproject.dto.response.ManagerResponse;
 import com.example.smmproject.entity.Manager;
+import com.example.smmproject.exceptions.NotFoundException;
 import com.example.smmproject.repository.ManagerRepository;
 import com.example.smmproject.service.ManagerService;
 import org.modelmapper.ModelMapper;
@@ -15,6 +16,8 @@ public class ManagerServiceImpl implements ManagerService {
 
     private final ModelMapper modelMapper;
     private final ManagerRepository managerRepository;
+
+    private static final String NOT_FOUND_ERROR="Not found this id";
 
 
     public ManagerServiceImpl(ModelMapper modelMapper, ManagerRepository managerRepository) {
@@ -37,13 +40,13 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Override
     public ManagerResponse getById(Long id) {
-        Manager manager=managerRepository.findById(id).orElseThrow(RuntimeException::new);
+        Manager manager=managerRepository.findById(id).orElseThrow(()-> new NotFoundException(NOT_FOUND_ERROR));
         return modelMapper.map(manager,ManagerResponse.class);
     }
 
     @Override
     public ManagerResponse update(Long id, ManagerRequest managerRequest) {
-    managerRepository.findById(id).orElseThrow(RuntimeException::new);
+    managerRepository.findById(id).orElseThrow(()-> new NotFoundException(NOT_FOUND_ERROR));
     Manager manager=modelMapper.map(managerRequest,Manager.class);
     manager.setId(id);
     return modelMapper.map(managerRepository.save(manager),ManagerResponse.class);
@@ -51,7 +54,7 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Override
     public void delete(Long id) {
-        Manager manager=managerRepository.findById(id).orElseThrow(RuntimeException::new);
+        Manager manager=managerRepository.findById(id).orElseThrow(()-> new NotFoundException(NOT_FOUND_ERROR));
         managerRepository.delete(manager);
 
     }
